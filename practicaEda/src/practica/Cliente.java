@@ -12,5 +12,5 @@ package practica;
  */
 public abstract class Cliente {
     
-    public void mostrarDatossssssss(){}
+    public void mostrarDatos(){}
 }

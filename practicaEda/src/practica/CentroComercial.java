@@ -173,38 +173,38 @@ public class CentroComercial {
         
         return tiendas;
     }
-    public Tienda[] obtenerTiendasPorMarca(String marca){
-        Scanner sc = new Scanner(System.in);
-        Tienda[] tienda =new Tienda[this.tiendas.length];
-        int contador=0;
-          for(int i=0; i<this.tiendas.length;i++){
-            
-             Catalogo cat[] =tiendas[i].getCatalogos();
-            for(int j=0;j<cat.length;j++){
-                
-                if(marca.equalsIgnoreCase(cat[j].getMarca())){
-                    tienda[contador]=this.tiendas[i];
-                    contador++;
-                }
-            }
-            }
-          boolean bandera=false;
-        String respuesta="a";
-                while(bandera==false){
-                    System.out.println("¿Quieres ver los datos de alguna de las tiendas donde trabaja? S/N");
-                    respuesta= sc.nextLine();
-                    if("S".equalsIgnoreCase(respuesta)||"N".equalsIgnoreCase(respuesta)){
-                        bandera=true;
-                    }
-                }
-                if(respuesta.equalsIgnoreCase("S")){
-                    for(int x=0; x<tiendas.length;x++){
-                        System.out.println(tiendas[x].getNombre());
-                        mostrarDatosTienda(tiendas[x]);
-                    }
-                }
-          return tienda;
-    }
+//    public Tienda[] obtenerTiendasPorMarca(String marca){
+//        Scanner sc = new Scanner(System.in);
+//        Tienda[] tienda =new Tienda[this.tiendas.length];
+//        int contador=0;
+//          for(int i=0; i<this.tiendas.length;i++){
+//            
+//             Catalogo cat[] =tiendas[i].getCatalogos();
+//            for(int j=0;j<cat.length;j++){
+//                
+//                if(marca.equalsIgnoreCase(cat[j].getMarca())){
+//                    tienda[contador]=this.tiendas[i];
+//                    contador++;
+//                }
+//            }
+//            }
+//          boolean bandera=false;
+//        String respuesta="a";
+//                while(bandera==false){
+//                    System.out.println("¿Quieres ver los datos de alguna de las tiendas donde trabaja? S/N");
+//                    respuesta= sc.nextLine();
+//                    if("S".equalsIgnoreCase(respuesta)||"N".equalsIgnoreCase(respuesta)){
+//                        bandera=true;
+//                    }
+//                }
+//                if(respuesta.equalsIgnoreCase("S")){
+//                    for(int x=0; x<tiendas.length;x++){
+//                        System.out.println(tiendas[x].getNombre());
+//                        mostrarDatosTienda(tiendas[x]);
+//                    }
+//                }
+//          return tienda;
+//    }
     
     public Empleado[] obtenerEmpleadosCentro(){
 //            Empleado[] listaEmpleados=new Empleado[this.getEmpleados().length];

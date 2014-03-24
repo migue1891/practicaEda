@@ -117,7 +117,7 @@ public class CentroComercial {
                 return tiendaSelec;
              }
         }
-       
+        
         return null;
     }
     
@@ -144,14 +144,23 @@ public class CentroComercial {
     
     public Tienda[] buscarTiendasDeEmpleado(String nombre){
         Scanner sc = new Scanner(System.in);
-        Tienda[] tiendas =new Tienda[this.tiendas.length];
-        int contador =0;
+        int contador =1;
         for(int i=0; i<this.tiendas.length;i++){
             for(int j=0;j<this.tiendas[i].getEmpleados().length;j++){
                 Empleado[] emp = this.tiendas[i].getEmpleados();
                 if(nombre.equalsIgnoreCase(emp[j].getNombre())){
-                      tiendas[contador]=this.tiendas[i];
                       contador++;
+                }
+            }
+            System.out.println(contador);
+       Tienda[] tiendas =new Tienda[contador];
+       int contador2=0;
+        for(int x=0; x<this.tiendas.length;x++){
+            for(int k=0;k<this.tiendas[x].getEmpleados().length;k++){
+                Empleado[] emp1 = this.tiendas[x].getEmpleados();
+                if(nombre.equalsIgnoreCase(emp1[k].getNombre())){
+                      tiendas[contador2]=this.tiendas[i];
+                      contador2++;
                 }
             }
         } 
@@ -170,6 +179,7 @@ public class CentroComercial {
                 mostrarDatosTienda(tienda);
             }
                 }
+        }
         
         return tiendas;
     }

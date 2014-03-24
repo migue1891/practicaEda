@@ -101,9 +101,9 @@ public class CentroComercial {
         return plazasGarage;
     }
 
-    public void setPlazasGarage(int plazasGarage) {
-        this.plazasGarage = plazasGarage;
-    }
+    //public void setPlazasGarage(int plazasGarage) {
+      //  this.plazasGarage = plazasGarage;
+    //}
 
 
     public Tienda buscarTienda(String tienda){

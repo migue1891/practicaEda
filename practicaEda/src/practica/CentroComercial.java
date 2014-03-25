@@ -10,7 +10,7 @@ import java.util.*;
  *
  * @author Miguel
  */
- Hola David
+
 public class CentroComercial {
    
     private String Nombre;

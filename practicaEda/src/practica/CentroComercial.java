@@ -20,8 +20,7 @@ public class CentroComercial {
     private int puertasAcceso;
     private int salEmergencias;
     private int plazasGarage;
-    int alquiler;
- 
+    
     public CentroComercial(String Nombre, String Direccion, int puertasAcceso, int salEmergencias, int plazasGarage, int tiend, int emp, int client) {
         this.Nombre = Nombre;
         this.Direccion = Direccion;
@@ -144,7 +143,7 @@ public class CentroComercial {
     
     public Tienda[] buscarTiendasDeEmpleado(String nombre){
         Scanner sc = new Scanner(System.in);
-        int contador =1;
+        int contador =0;
         for(int i=0; i<this.tiendas.length;i++){
             for(int j=0;j<this.tiendas[i].getEmpleados().length;j++){
                 Empleado[] emp = this.tiendas[i].getEmpleados();
@@ -152,18 +151,19 @@ public class CentroComercial {
                       contador++;
                 }
             }
-            System.out.println(contador);
+        }
        Tienda[] tiendas =new Tienda[contador];
        int contador2=0;
         for(int x=0; x<this.tiendas.length;x++){
             for(int k=0;k<this.tiendas[x].getEmpleados().length;k++){
                 Empleado[] emp1 = this.tiendas[x].getEmpleados();
                 if(nombre.equalsIgnoreCase(emp1[k].getNombre())){
-                      tiendas[contador2]=this.tiendas[i];
+                      tiendas[contador2]=this.tiendas[x];
                       contador2++;
                 }
             }
         } 
+        
         boolean bandera=false;
         String respuesta="a";
                 while(bandera==false){
@@ -173,13 +173,14 @@ public class CentroComercial {
                         bandera=true;
                     }
                 }
+      System.out.println("N "+tiendas.length);
                 if(respuesta.equalsIgnoreCase("S")){
-            for (Tienda tienda : tiendas) {
-                System.out.println(tienda.getNombre());
-                mostrarDatosTienda(tienda);
-            }
+                    for (int k=0; k<tiendas.length;k++) {
+                        System.out.println(tiendas[k].getNombre());
+                        mostrarDatosTienda(tiendas[k]);
+                    }
                 }
-        }
+        
         
         return tiendas;
     }

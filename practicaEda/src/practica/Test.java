@@ -206,7 +206,6 @@ public class Test {
        
        Empleado[] listaEmpleados = centro.obtenerTodosLosEmpleados();
        
-       System.out.println(listaEmpleados.length);
       
        for(int i=0;i<listaEmpleados.length;i++){
             System.out.println(i+" " +listaEmpleados[i].getNombre());

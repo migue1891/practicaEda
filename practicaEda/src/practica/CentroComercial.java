@@ -8,7 +8,7 @@ package practica;
 import java.util.*;
 /**
  *
- * @author Miguel
+ * @author Miguelaaaaaaa
  */
 
 public class CentroComercial {

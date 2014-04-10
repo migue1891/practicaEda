@@ -6,6 +6,8 @@
 
 package practica;
 
+import Libreria.SListMod;
+
 /**
  *
  * @author Miguel
@@ -17,7 +19,7 @@ public class Tienda {
     private float area;
     private Empleado[] empleados = new Empleado[10];
     private Catalogo[] catalogos = new Catalogo[10];
-    private Producto [] Stock = new Producto[20];
+    private SListMod stock = new SListMod();
     private int  alquiler;
     private boolean estado;
 
@@ -73,12 +75,12 @@ public class Tienda {
         this.catalogos = catalogos;
     }
 
-    public Producto[] getStock() {
-        return Stock;
+    public SListMod getStock() {
+        return stock;
     }
 
-    public void setStock(Producto[] Stock) {
-        this.Stock = Stock;
+    public void setStock(SListMod Stock) {
+        this.stock = Stock;
     }
 
     public float getAlquiler() {
@@ -96,6 +98,23 @@ public class Tienda {
     public void setEstado(boolean estado) {
         this.estado = estado;
     }
-
-
+//REVISAR EL METODO DE ABAJO NO ME GUSTA!!
+    public SListMod getProductos(){
+        SListMod todProductos = new SListMod();
+        for(int i=0; i<this.stock.getSize();i++){
+            todProductos.addLast(this.stock.getAt(i));
+        }
+        return todProductos;
+    }
+    public Producto getProductoAt(int index){
+    return (Producto) this.stock.getAt(index);
+    }
+    
+    public void generarStock(){
+    
+    }
+//AQUI TIENE QUE VENIR CUANTO MENOS 
+    public void generarMostradores(){}
+    
+    
 }
